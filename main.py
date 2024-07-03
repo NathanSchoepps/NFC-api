@@ -11,7 +11,10 @@ SECRET_KEY = "your_default_secret_key"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-app = FastAPI()
+app = FastAPI(
+    title='Octicode API',
+    docs_url='/',
+)
 
 # Mock database
 fake_users_db = {
