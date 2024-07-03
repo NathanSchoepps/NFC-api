@@ -3,11 +3,11 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
-from models import User, Token, NFCData  # Importer les modèles depuis models.py
+from models import User, Token, NFCData
 import os
 
 # Constants for JWT
-SECRET_KEY = os.getenv("SECRET_KEY", "your_default_secret_key")  # Utilisez une clé secrète réelle depuis les variables d'environnement
+SECRET_KEY = "your_default_secret_key" 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
@@ -20,7 +20,7 @@ fake_users_db = {
         "name": "John Doe",
         "email": "john.doe@estiam.com",
         "role": "employee",
-        "password": "password"  # plain text password for testing
+        "password": "password"
     }
 }
 
