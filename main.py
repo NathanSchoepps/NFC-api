@@ -4,10 +4,10 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
 from models import User, Token, NFCData  # Importer les modèles depuis models.py
+import os
 
 # Constants for JWT
-import os
-SECRET_KEY = os.getenv("SECRET_KEY", "your_secret_key")  # Utilisez une clé secrète réelle depuis les variables d'environnement
+SECRET_KEY = os.getenv("SECRET_KEY", "your_default_secret_key")  # Utilisez une clé secrète réelle depuis les variables d'environnement
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
